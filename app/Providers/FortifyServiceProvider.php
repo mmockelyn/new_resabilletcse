@@ -18,6 +18,7 @@ class FortifyServiceProvider extends ServiceProvider
      * Register any application services.
      *
      * @return void
+     * @codeCoverageIgnore
      */
     public function register()
     {
@@ -28,6 +29,7 @@ class FortifyServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      *
      * @return void
+     * @codeCoverageIgnore
      */
     public function boot()
     {
@@ -35,6 +37,9 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+
+        Fortify::loginView('auth.login');
+        Fortify::registerView('auth.register');
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
