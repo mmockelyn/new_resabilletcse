@@ -19,6 +19,11 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v1
+      - name: Setup PHP with Xdebug
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: xdebug
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Installation des dépendances par composer
@@ -30,13 +35,13 @@ jobs:
       - name: Exécution des tests Unitaires
         env:
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
-        run: ./vendor/bin/phpunit
+        run: php artisan test --coverage
 
   build-js-staging:
     name: Build JavaScript/CSS for STAGING Server
     runs-on: ubuntu-latest
     needs: tests
-    if: github.ref == 'refs/heads/staging'
+    if: github.ref == 'refs/heads/develop'
     steps:
       - uses: actions/checkout@v1
       - name: NPM Build
@@ -54,7 +59,7 @@ jobs:
     name: Deploy Project to STAGING Server
     runs-on: ubuntu-latest
     needs: [ build-js-staging, tests ]
-    if: github.ref == 'refs/heads/staging'
+    if: github.ref == 'refs/heads/develop'
     steps:
       - uses: actions/checkout@v1
       - name: Fetch built assets from Artifacts
