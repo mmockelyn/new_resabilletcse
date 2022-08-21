@@ -59,7 +59,7 @@ jobs:
       - name: NPM Build
         run: |
           npm install
-          npm run prod
+          npm run build
       - name: Envoie des Assets dans Artifacts
         uses: actions/upload-artifact@v1
         with:
