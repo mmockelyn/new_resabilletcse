@@ -13,6 +13,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "intervention/validation": "^3.2",
         "jenssegers/agent": "^2.6",
+        "lab404/laravel-auth-checker": "^1.6",
         "laravel/fortify": "^1.13",
         "laravel/framework": "^9.19",
         "laravel/homestead": "^13.2",

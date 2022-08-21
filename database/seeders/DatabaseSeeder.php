@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User\User;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +16,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::create([
+            'firstname' => 'Admin',
+            'lastname' => 'Resabilletcse',
+            'email' => 'admin@resabilletcse.com',
+            'password' => Hash::make('rbU89a-4'),
+            'group' => 'admin',
+            'active' => true
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::create([
+            'firstname' => 'Agent',
+            'lastname' => 'Resabilletcse',
+            'email' => 'agent@resabilletcse.com',
+            'password' => Hash::make('rbU89a-4'),
+            'group' => 'agent',
+            'active' => true
+        ]);
+
+        User::create([
+            'firstname' => 'Client',
+            'lastname' => 'Resabilletcse',
+            'email' => 'customer@resabilletcse.com',
+            'password' => Hash::make('rbU89a-4'),
+            'group' => 'customer',
+            'active' => true
+        ]);
+        \App\Models\User\User::factory(10)->create(['group' => 'customer', 'active' => true]);
+        $this->call(ShopSeeder::class);
+        $this->call(CatalogueSeeder::class);
     }
 }

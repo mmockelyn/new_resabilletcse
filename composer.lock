@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "daf15c7ee6fd55d9bb39cd9a51657265",
+    "content-hash": "94d1ec07b568f4a3005eddfabb7218a5",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -2096,6 +2096,72 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "lab404/laravel-auth-checker",
+            "version": "1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/404labfr/laravel-auth-checker.git",
+                "reference": "49545acdc81bd1a5d8db32cb456be45c6173af30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/404labfr/laravel-auth-checker/zipball/49545acdc81bd1a5d8db32cb456be45c6173af30",
+                "reference": "49545acdc81bd1a5d8db32cb456be45c6173af30",
+                "shasum": ""
+            },
+            "require": {
+                "jenssegers/agent": "^2.6",
+                "laravel/framework": "^6.0 | ^7.0 | ^8.0 | ^9.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/database": "^4.0 | ^5.0",
+                "orchestra/testbench": "^4.0 | ^5.0 | ^6.0 | ^7.0",
+                "phpunit/phpunit": "^7.5 | ^8.0 | ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lab404\\AuthChecker\\AuthCheckerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lab404\\AuthChecker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "404lab",
+                    "email": "web@404lab.fr"
+                }
+            ],
+            "description": "Laravel Auth Checker allows you to log users authentication, devices authenticated from and lock intrusions.",
+            "keywords": [
+                "Authentication",
+                "IP",
+                "check",
+                "device",
+                "laravel",
+                "laravel-package",
+                "laravel-plugin",
+                "package",
+                "plugin",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/404labfr/laravel-auth-checker/issues",
+                "source": "https://github.com/404labfr/laravel-auth-checker/tree/1.6.2"
+            },
+            "time": "2022-02-09T17:58:08+00:00"
         },
         {
             "name": "laravel/fortify",
