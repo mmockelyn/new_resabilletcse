@@ -28,7 +28,7 @@ jobs:
       - name: Exécution des tests Unitaires
         env:
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
-        run: ./vendor/bin/phpunit
+        run: php artisan test --coverage
 
   build-js-production:
     name: Construction des Assets
