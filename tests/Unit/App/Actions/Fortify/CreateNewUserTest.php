@@ -16,14 +16,16 @@ class CreateNewUserTest extends TestCase
     public function testCreate()
     {
         $user = $this->post('/register', [
-            'name' => "Test User",
+            'firstname' => "Test",
+            'lastname' => "User",
             'email' => "test@test.com",
             'password' => '0000',
             'password_confirmation' => '0000'
         ]);
 
         $user = User::create([
-            'name' => "Test User",
+            'firstname' => "Test",
+            'lastname' => "User",
             'email' => 'test@test.com',
             'password' => Hash::make('0000')
         ]);
