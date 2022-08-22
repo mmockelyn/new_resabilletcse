@@ -16,6 +16,7 @@ class ResetUserPassword implements ResetsUserPasswords
      * @param  mixed  $user
      * @param  array  $input
      * @return void
+     * @codeCoverageIgnore
      */
     public function reset($user, array $input)
     {

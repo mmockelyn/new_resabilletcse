@@ -3,7 +3,7 @@
 namespace Actions\Fortify;
 
 use App\Actions\Fortify\ResetUserPassword;
-use App\Models\User;
+use App\Models\User\User;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
