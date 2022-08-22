@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('article_lieus', function (Blueprint $table) {
             $table->id();
-            $table->string('nom')->nullable();
+            $table->uuid('uuid')->nullable();
             $table->string('address')->nullable();
             $table->string('addressbis')->nullable();
             $table->string('postal')->nullable();

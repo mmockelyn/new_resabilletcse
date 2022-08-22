@@ -22,6 +22,11 @@ class Article extends Model
         return $this->belongsTo(SubGenre::class, 'sub_genre_id');
     }
 
+    public function catalogue()
+    {
+        return $this->belongsTo(Catalogue::class, 'catalogue_id');
+    }
+
     public function tarifs()
     {
         return $this->hasMany(ArticleTarif::class);

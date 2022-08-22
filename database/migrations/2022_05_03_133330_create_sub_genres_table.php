@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('name');
             $table->boolean('open')->default(true);
             $table->timestamp('date_open')->nullable();
-            $table->string('info_open')->nullable();
+            $table->longText('info_open')->nullable();
             $table->string('url_info')->nullable();
             $table->string('url_resa')->nullable();
             $table->string('url')->nullable();
-            $table->string('descriptif')->nullable();
-            $table->string('descriptif_data')->nullable();
+            $table->longText('descriptif')->nullable();
+            $table->longText('descriptif_data')->nullable();
             $table->string('logo')->nullable();
             $table->string('plan')->nullable();
             $table->string('postal')->nullable();
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->boolean('sejour')->default(false);
             $table->string('provider_url')->nullable();
             $table->string('provider_code')->nullable();
-            $table->integer('lieux_id')->nullable();
+            $table->string('lieux_id')->nullable();
             $table->string('lieux_latitude')->nullable();
             $table->string('lieux_longitude')->nullable();
             $table->boolean('actif')->default(true);

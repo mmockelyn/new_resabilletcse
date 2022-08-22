@@ -108,6 +108,11 @@ return new class extends Migration
                             ->cascadeOnUpdate()
                             ->cascadeOnDelete();
 
+            $table->foreignId('catalogue_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+
         });
     }
 

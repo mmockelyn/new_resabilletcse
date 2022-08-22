@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('name');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('descriptif')->nullable();
             $table->json('descriptif_data')->nullable();
             $table->timestamps();

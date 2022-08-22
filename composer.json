@@ -22,7 +22,8 @@
         "mmockelyn/laravel-insee": "dev-master",
         "stripe/stripe-php": "^9.2",
       "ext-soap": "*",
-        "ext-curl": "*"
+        "ext-curl": "*",
+      "ext-simplexml": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

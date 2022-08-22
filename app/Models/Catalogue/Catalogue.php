@@ -15,4 +15,9 @@ class Catalogue extends Model
     {
         return $this->hasMany(Genre::class);
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
