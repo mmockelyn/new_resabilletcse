@@ -3,7 +3,7 @@
 namespace Tests\Unit\Actions\Fortify;
 
 use App\Actions\Fortify\CreateNewUser;
-use App\Models\User;
+use App\Models\User\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Hash;
