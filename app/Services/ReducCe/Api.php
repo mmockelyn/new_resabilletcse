@@ -4,6 +4,9 @@ namespace App\Services\ReducCe;
 
 use App\Helper\LogHelper;
 
+/**
+ * @codeCoverageIgnore
+ */
 
 class Api extends \SoapClient
 {

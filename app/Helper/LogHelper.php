@@ -9,11 +9,12 @@ class LogHelper
     /**
      * @param $type
      * @param $message
-     * @return void
+     * @return string
      */
     public static function notify($type, $message)
     {
         \Log::$type($message);
+        return $message;
     }
 
     public static function getTypeTitle($type)

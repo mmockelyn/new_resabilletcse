@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
+    /**
+     * @return void
+     * @codeCoverageIgnore
+     */
     public function code()
     {
         /*try {

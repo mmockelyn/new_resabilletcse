@@ -4,6 +4,10 @@ namespace App\Services\Tradedoubler;
 
 use Illuminate\Http\Client\HttpClientException;
 
+/**
+ * @codeCoverageIgnore
+ */
+
 class API
 {
     private string|false $bearer_code;

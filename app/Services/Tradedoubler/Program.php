@@ -2,6 +2,9 @@
 
 namespace App\Services\Tradedoubler;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Program extends API
 {
     public function list()
