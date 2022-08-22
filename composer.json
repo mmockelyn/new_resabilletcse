@@ -20,7 +20,9 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "mmockelyn/laravel-insee": "dev-master",
-        "stripe/stripe-php": "^9.2"
+        "stripe/stripe-php": "^9.2",
+      "ext-soap": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

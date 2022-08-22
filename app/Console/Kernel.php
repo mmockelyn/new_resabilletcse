@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
+        $schedule->command('tradedoubler applyAds')->daily()->description("Demande d'accès Tradedoubler")->emailOutputTo(config('mail.from.address'));
     }
 
     /**
