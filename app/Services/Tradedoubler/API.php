@@ -54,17 +54,12 @@ class API
         if (!isset($this->access_token)) {
             $this->auth();
         }
-        switch ($method) {
-            case 'GET':
-                return \Http::withToken($this->access_token)->get($this->endpoint.$uri, $data)->object();
-            case 'POST':
-                return \Http::withToken($this->access_token)->post($this->endpoint.$uri, $data)->object();
-
-            case 'PUT':
-                return \Http::withToken($this->access_token)->put($this->endpoint.$uri, $data)->object();
-
-            case 'DELETE':
-                return \Http::withToken($this->access_token)->delete($this->endpoint.$uri, $data)->object();
-        }
+        return match ($method) {
+            'GET' => \Http::withToken($this->access_token)->get($this->endpoint . $uri, $data)->object(),
+            'POST' => \Http::withToken($this->access_token)->post($this->endpoint . $uri, $data)->object(),
+            'PUT' => \Http::withToken($this->access_token)->put($this->endpoint . $uri, $data)->object(),
+            'DELETE' => \Http::withToken($this->access_token)->delete($this->endpoint . $uri, $data)->object(),
+            default => 0,
+        };
     }
 }

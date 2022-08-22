@@ -28,9 +28,11 @@ class TradedoublerCommand extends Command
      */
     public function handle()
     {
-        switch ($this->argument('action')) {
-            case 'applyAds':
-                return $this->applyAds();
+        $i = $this->argument('action');
+        if ($i == 'applyAds') {
+            return $this->applyAds();
+        } else {
+            return null;
         }
     }
 
