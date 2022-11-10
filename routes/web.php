@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->name('front.home');
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'code']);
+
+Route::prefix('webhook')->group(function () {
+    Route::get('sld/result' , [\App\Http\Controllers\Webhook\SldController::class, 'call']);
+});
