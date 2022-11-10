@@ -23,9 +23,8 @@ class TestController extends Controller
         }
 
 
-        dd($commande->create([
-            'schema' => [],
-            'any' => [
+        dd($commande->create(
+            [
                 config('ce.ce_id'),
                 "ce" => [
                     "ce_id" => config('ce.ce_id'),
@@ -48,9 +47,9 @@ class TestController extends Controller
                     'livraison_ville'
                 ],
                 'signature' => [
-                    'clef_secret' => sha1("LS50G".config('ce.ce_id')."")
-                ]
+                    'clef_secret' => sha1("LS50G" . config('ce.ce_id') . "")
+                ],
             ]
-        ]));
+        ));
     }
 }
