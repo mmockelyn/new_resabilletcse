@@ -27,7 +27,7 @@ class TestController extends Controller
             'schema' => [],
             'any' => [
                 "ce" => [
-                    "ce_id" => 4,
+                    "ce_id" => config('ce.ce_id'),
                     'ce_societe' => "TEST",
                     "ce_nom" => "Doe",
                     'ce_prenom' => "John",
