@@ -21,6 +21,6 @@ class TestController extends Controller
             dd($e->getMessage());
         }
 
-        dd($client->GET_CATALOGUES(['partenaire_id' => config('ce.ce_id')]));
+        dd($client);
     }
 }
