@@ -21,6 +21,6 @@ class TestController extends Controller
             dd($e->getMessage());
         }
 
-        dd($client);
+        dd($client->ETAT_SITE());
     }
 }
