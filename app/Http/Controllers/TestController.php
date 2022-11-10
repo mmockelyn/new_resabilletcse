@@ -22,6 +22,8 @@ class TestController extends Controller
             dd($e->getMessage());
         }
 
+        dd($commande->ETAT_SITE());
+
         dd($commande->create([
             'schema' => [],
             'any' => [
@@ -36,7 +38,7 @@ class TestController extends Controller
                 ],
                 'commande' => [
                     'mode_paiement' => 'Carte bancaire',
-                    'prix_livraison',
+                    'prix_livraison' => '',
                     'livraison_adresse_societe',
                     'livraison_adresse_nom',
                     'livraison_adresse_1',
