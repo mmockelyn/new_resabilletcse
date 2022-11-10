@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class SldController extends Controller
 {
-    //
+    public function call(Request $request)
+    {
+        return ($request->all());
+    }
 }

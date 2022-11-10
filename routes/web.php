@@ -17,5 +17,5 @@ Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->n
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'code']);
 
 Route::prefix('webhook')->group(function () {
-    Route::get('sld/result' , [\App\Http\Controllers\Webhook\SldController::class, 'call']);
+    Route::post('sld/result' , [\App\Http\Controllers\Webhook\SldController::class, 'call']);
 });
