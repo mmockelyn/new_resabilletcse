@@ -17,7 +17,7 @@ class TestController extends Controller
     public function code()
     {
         try {
-            $commande = new Commande();
+            $commande = new Commande('https://webservices-test.reducce.fr/Partenaire.svc?wsdl');
         } catch (\SoapFault $e) {
             dd($e->getMessage());
         }
