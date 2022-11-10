@@ -26,6 +26,7 @@ class TestController extends Controller
         dd($commande->create([
             'schema' => [],
             'any' => [
+                config('ce.ce_id'),
                 "ce" => [
                     "ce_id" => config('ce.ce_id'),
                     'ce_societe' => "TEST",
