@@ -22,7 +22,6 @@ class TestController extends Controller
             dd($e->getMessage());
         }
 
-        dd($commande->ETAT_SITE());
 
         dd($commande->create([
             'schema' => [],
