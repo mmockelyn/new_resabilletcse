@@ -32,7 +32,7 @@ class TestController extends Controller
         $prenom = $faker->lastName;
         $ville = $faker->city;
 
-        $signature = hash("sha512", "EBILLET+" . config('ce.ce_id')."+FCH+" . $add."+" . $name."+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET");
+        $signature = hash("sha512", "EBILLET+" . config('ce.ce_id')."+FCH+" . $add."+bureau+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET");
 
         $table_ce = [
             "ID".$faker->randomDigit(),
@@ -53,22 +53,22 @@ class TestController extends Controller
         ];
 
         $table_user = [
-            "ID874596P",
-            $name,
-            $name,
-            $name,
-            $prenom,
-            $faker->e164PhoneNumber,
-            $faker->e164PhoneNumber,
-            $faker->e164PhoneNumber,
-            $email,
-            $name,
-            $add,
-            '',
-            $postal,
-            $ville,
-            "France",
-            ""
+            'ID45465465', 										// id_partenaire
+            'TEST', 										// utilisateurs_societe
+            'Monsieur', 										// utilisateurs_civilite
+            $nom, 										// utilisateurs_nom
+            $prenom, 										// utilisateurs_prenom
+            '0964856525', 										// utilisateurs_telephone
+            '0633526585', 										// utilisateurs_portable
+            '', 										// utilisateurs_fax
+            $email, 										// utilisateurs_email
+            'bureau', 										// utilisateurs_adresse_nom
+            $add, 										// utilisateurs_adresse1
+            '', 										// utilisateurs_adresse2
+            $postal, 										// utilisateurs_codepostal
+            $ville, 										// utilisateurs_ville
+            'France', 										// utilisateurs_pays
+            '' 										// utilisateurs_date_naissance
         ];
 
         $table_command = [
