@@ -96,10 +96,7 @@ class TestController extends Controller
                 'clef_secret' => hash("sha512", "LS50G" . config('ce.ce_id') . $add . $name.$postal.$email.$nom.$prenom.$ville."SECRET")
             ],
         ];
-        dd($data);
 
-        dd($commande->create(
-
-        ));
+        dd($commande->create($data));
     }
 }
