@@ -24,7 +24,7 @@ class TestController extends Controller
             dd($e->getMessage());
         }
 
-        $add = $faker->address;
+        $add = $faker->streetAddress;
         $nom = $faker->name;
         $postal = $faker->postcode;
         $email = $faker->email;
