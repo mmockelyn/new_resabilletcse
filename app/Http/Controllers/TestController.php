@@ -33,8 +33,8 @@ class TestController extends Controller
         $ville = $faker->city;
 
         $signature = "EBILLET+" . config('ce.ce_id')."+FCH+" . $add."+bureau+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET";
-        dd($signature, $add, $nom, $postal, $email, $prenom, $ville);
-        $signature = hash("sha512", "EBILLET+" . config('ce.ce_id')."+FCH+" . $add."+bureau+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET");
+        //dd($signature, $add, $nom, $postal, $email, $prenom, $ville);
+        $signature = hash("sha512", $signature);
 
         $table_ce = [
             '123456', 									// ce_id
