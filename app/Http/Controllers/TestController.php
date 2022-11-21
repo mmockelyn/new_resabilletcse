@@ -37,20 +37,19 @@ class TestController extends Controller
         $table_ce = [
             "ID".$faker->randomDigit(),
             "TEST",
-            "TEST",
+            "Monsieur",
             "Doe",
             "John",
-            "Test@test.com",
             $faker->phoneNumber,
             $faker->phoneNumber,
             $faker->phoneNumber,
             "Test@test.com",
-            $faker->name,
+            "Bureau",
             $faker->address,
             '',
             "85100",
             "Les Sables d'Olonne",
-            "France"
+            "France",
         ];
 
         $table_user = [
