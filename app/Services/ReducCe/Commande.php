@@ -17,8 +17,6 @@ class Commande extends Api
             $tab
         ];
         $client = new Api('https://webservices-test.reducce.fr/Partenaire.svc?wsdl', ['cache_wsdl' => WSDL_CACHE_NONE]);
-
-        dd(config('ce.ce_id'));
         return $client->CREATION_COMMANDE_ARRAY($params);
     }
 }

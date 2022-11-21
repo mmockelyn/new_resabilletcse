@@ -33,6 +33,9 @@ class TestController extends Controller
         $ville = $faker->city;
 
         $data = [
+            'SIGNATURE' => [
+                'clef_secret' => hash("sha512", "LS50G" . config('ce.ce_id') . $add . $name.$postal.$email.$nom.$prenom.$ville."SECRET")
+            ],
             "TABLE_CE" => [
                 "ce_id" => "ID".$faker->randomDigit(),
                 'ce_societe' => "TEST",
@@ -50,6 +53,24 @@ class TestController extends Controller
                 'ce_codepostal' => "85100",
                 'ce_ville' => "Les Sables d'Olonne",
                 'ce_pays' => "France"
+            ],
+            'TABLE_UTILISATEUR' => [
+                'id_partenaire' => "ID874596P",
+                'utilisateurs_societe' => $name,
+                'utilisateurs_civilite' => $name,
+                'utilisateurs_nom' => $name,
+                'utilisateurs_prenom' => $prenom,
+                'utilisateurs_telephone' => $faker->e164PhoneNumber,
+                'utilisateurs_portable' => $faker->e164PhoneNumber,
+                'utilisateurs_fax' => $faker->e164PhoneNumber,
+                'utilisateurs_email' => $email,
+                'utilisateurs_adresse_nom' => $name,
+                'utilisateurs_adresse1' => $add,
+                'utilisateurs_adresse2' => '',
+                'utilisateurs_codepostal' => $postal,
+                'utilisateurs_ville' => $ville,
+                'utilisateurs_pays' => "France",
+                'utilisateurs_date_naissance' => ""
             ],
             'TABLE_COMMANDE' => [
                 'nb_cheques_vacances' => '',
@@ -73,27 +94,6 @@ class TestController extends Controller
                 'frais_port_payeur' => '',
                 'remise_frais_port' => '',
                 'numero_commande_distributeur' => 'CMD'.$faker->randomDigit(),
-            ],
-            'TABLE_UTILISATEUR' => [
-                'id_partenaire' => "ID874596P",
-                'utilisateurs_societe' => $name,
-                'utilisateurs_civilite' => $name,
-                'utilisateurs_nom' => $name,
-                'utilisateurs_prenom' => $prenom,
-                'utilisateurs_telephone' => $faker->e164PhoneNumber,
-                'utilisateurs_portable' => $faker->e164PhoneNumber,
-                'utilisateurs_fax' => $faker->e164PhoneNumber,
-                'utilisateurs_email' => $email,
-                'utilisateurs_adresse_nom' => $name,
-                'utilisateurs_adresse1' => $add,
-                'utilisateurs_adresse2' => '',
-                'utilisateurs_codepostal' => $postal,
-                'utilisateurs_ville' => $ville,
-                'utilisateurs_pays' => "France",
-                'utilisateurs_date_naissance' => ""
-            ],
-            'SIGNATURE' => [
-                'clef_secret' => hash("sha512", "LS50G" . config('ce.ce_id') . $add . $name.$postal.$email.$nom.$prenom.$ville."SECRET")
             ],
         ];
 
