@@ -13,10 +13,10 @@ class Commande extends Api
         $dataset->any = '';
 
         $params = [
-            'CE_ID' => config('ce.ce_id'),
+
             $tab
         ];
         $client = new Api('https://webservices-test.reducce.fr/Partenaire.svc?wsdl', ['cache_wsdl' => WSDL_CACHE_NONE]);
-        return $client->CREATION_COMMANDE_ARRAY($params);
+        return $client->CREATION_COMMANDE_ARRAY($tab);
     }
 }

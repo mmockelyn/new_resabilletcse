@@ -95,8 +95,10 @@ class TestController extends Controller
             '',
             'CMD'.$faker->randomDigit(),
         ];
+        dd(config('ce.ce_id'));
 
         $data = [
+            'CE_ID' => config('ce.ce_id'),
             'SIGNATURE' => $signature,
             'TABLE_CE' => $table_ce,
             'TABLE_UTILISATEUR' => $table_user,
