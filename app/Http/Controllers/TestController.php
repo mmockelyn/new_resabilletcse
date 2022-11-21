@@ -36,7 +36,7 @@ class TestController extends Controller
         dd($commande->create(
             [
                 "ce" => [
-                    "ce_id" => config('ce.ce_id'),
+                    "ce_id" => "ID".$faker->randomDigit(),
                     'ce_societe' => "TEST",
                     'ce_civilite' => "TEST",
                     "ce_nom" => "Doe",
