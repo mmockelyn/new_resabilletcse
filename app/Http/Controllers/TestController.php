@@ -74,7 +74,7 @@ class TestController extends Controller
         $table_command = [
             '',
             '',
-            'Carte bancaire',
+            'FCH',
             $faker->randomFloat(),
             '',
             '',
