@@ -32,69 +32,75 @@ class TestController extends Controller
         $prenom = $faker->lastName;
         $ville = $faker->city;
 
+        $signature = hash("sha512", "LS50G+" . config('ce.ce_id')."+" . $add."+" . $name."+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET");
+
+        $table_ce = [
+            "ID".$faker->randomDigit(),
+            "TEST",
+            "TEST",
+            "Doe",
+            "John",
+            "Test@test.com",
+            $faker->phoneNumber,
+            $faker->phoneNumber,
+            $faker->phoneNumber,
+            "Test@test.com",
+            $faker->name,
+            $faker->address,
+            '',
+            "85100",
+            "Les Sables d'Olonne",
+            "France"
+        ];
+
+        $table_user = [
+            "ID874596P",
+            $name,
+            $name,
+            $name,
+            $prenom,
+            $faker->e164PhoneNumber,
+            $faker->e164PhoneNumber,
+            $faker->e164PhoneNumber,
+            $email,
+            $name,
+            $add,
+            '',
+            $postal,
+            $ville,
+            "France",
+            ""
+        ];
+
+        $table_command = [
+            '',
+            '',
+            'Carte bancaire',
+            $faker->randomFloat(),
+            '',
+            '',
+            '',
+            $faker->name,
+            $faker->address,
+            '',
+            $faker->postcode,
+            $faker->city,
+            "France",
+            config('app.url'),
+            config('app.url'),
+            '',
+            '',
+            '',
+            '',
+            '',
+            'CMD'.$faker->randomDigit(),
+        ];
+
         $data = [
-            'SIGNATURE' => [
-                hash("sha512", "LS50G+" . config('ce.ce_id')."+" . $add."+" . $name."+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET")
-            ],
-            "TABLE_CE" => [
-                "ID".$faker->randomDigit(),
-                "TEST",
-                "TEST",
-                "Doe",
-                "John",
-                "Test@test.com",
-                $faker->phoneNumber,
-                $faker->phoneNumber,
-                $faker->phoneNumber,
-                "Test@test.com",
-                $faker->name,
-                $faker->address,
-                '',
-                "85100",
-                "Les Sables d'Olonne",
-                "France"
-            ],
-            'TABLE_UTILISATEUR' => [
-                "ID874596P",
-                $name,
-                $name,
-                $name,
-                $prenom,
-                $faker->e164PhoneNumber,
-                $faker->e164PhoneNumber,
-                $faker->e164PhoneNumber,
-                $email,
-                $name,
-                $add,
-                '',
-                $postal,
-                $ville,
-                "France",
-                ""
-            ],
-            'TABLE_COMMANDE' => [
-                '',
-                '',
-                'Carte bancaire',
-                $faker->randomFloat(),
-                '',
-                '',
-                '',
-                $faker->name,
-                $faker->address,
-                '',
-                $faker->postcode,
-                $faker->city,
-                "France",
-                config('app.url'),
-                config('app.url'),
-                '',
-                '',
-                '',
-                '',
-                '',
-                'CMD'.$faker->randomDigit(),
-            ],
+            'SIGNATURE' => $signature,
+            "TABLE_CE" => $table_ce,
+            'TABLE_UTILISATEUR' => $table_user,
+            'TABLE_COMMANDE' => $table_command,
         ];
 
         dd($commande->create($data));
