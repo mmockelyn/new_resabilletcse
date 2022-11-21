@@ -32,7 +32,7 @@ class TestController extends Controller
         $prenom = $faker->lastName;
         $ville = $faker->city;
 
-        $signature_i = "EBILLET+" . config('ce.ce_id')."+FCH+" . $add."+bureau+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET";
+        $signature_i = "EBILLET+ID45465465+FCH+" . $add."+bureau+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET";
         //dd($signature, $add, $nom, $postal, $email, $prenom, $ville);
         $signature = hash("sha512", $signature_i);
 
