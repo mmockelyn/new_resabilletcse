@@ -95,7 +95,6 @@ class TestController extends Controller
             '',
             'CMD'.$faker->randomDigit(),
         ];
-        dd(config('ce.ce_id'));
 
         $data = [
             'CE_ID' => config('ce.ce_id'),
