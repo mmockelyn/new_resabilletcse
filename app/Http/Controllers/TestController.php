@@ -76,7 +76,7 @@ class TestController extends Controller
             '',
             'FCH',
             $faker->randomFloat(),
-            '',
+            'EBILLET',
             '',
             '',
             $faker->name,
