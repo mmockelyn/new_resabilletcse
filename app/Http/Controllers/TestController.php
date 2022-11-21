@@ -33,7 +33,7 @@ class TestController extends Controller
         $ville = $faker->city;
 
         $data = [
-            "ce" => [
+            "TABLE_CE" => [
                 "ce_id" => "ID".$faker->randomDigit(),
                 'ce_societe' => "TEST",
                 'ce_civilite' => "TEST",
@@ -51,7 +51,7 @@ class TestController extends Controller
                 'ce_ville' => "Les Sables d'Olonne",
                 'ce_pays' => "France"
             ],
-            'commande' => [
+            'TABLE_COMMANDE' => [
                 'nb_cheques_vacances' => '',
                 'montant_total_cheques_vacances' => '',
                 'mode_paiement' => 'Carte bancaire',
@@ -74,7 +74,7 @@ class TestController extends Controller
                 'remise_frais_port' => '',
                 'numero_commande_distributeur' => 'CMD'.$faker->randomDigit(),
             ],
-            'utilisateur' => [
+            'TABLE_UTILISATEUR' => [
                 'id_partenaire' => "ID874596P",
                 'utilisateurs_societe' => $name,
                 'utilisateurs_civilite' => $name,
@@ -92,7 +92,7 @@ class TestController extends Controller
                 'utilisateurs_pays' => "France",
                 'utilisateurs_date_naissance' => ""
             ],
-            'signature' => [
+            'SIGNATURE' => [
                 'clef_secret' => hash("sha512", "LS50G" . config('ce.ce_id') . $add . $name.$postal.$email.$nom.$prenom.$ville."SECRET")
             ],
         ];
