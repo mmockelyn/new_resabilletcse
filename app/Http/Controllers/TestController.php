@@ -35,21 +35,21 @@ class TestController extends Controller
         $signature = hash("sha512", "EBILLET+" . config('ce.ce_id')."+FCH+" . $add."+bureau+".$postal."+".$email."+".$nom."+".$prenom."+".$ville."+"."SECRET");
 
         $table_ce = [
-            "ID".$faker->randomDigit(),
-            "TEST",
-            "Monsieur",
-            "Doe",
-            "John",
-            $faker->phoneNumber,
-            $faker->phoneNumber,
-            $faker->phoneNumber,
-            "Test@test.com",
-            "Bureau",
-            $faker->address,
-            '',
-            "85100",
-            "Les Sables d'Olonne",
-            "France",
+            '123456', 									// ce_id
+            'CE TEST', 								// ce_societe
+            'Monsieur', 										// ce_civilite
+            $nom, 										// ce_nom
+            $prenom, 										// ce_prenom
+            $faker->phoneNumber, 										// ce_telephone
+            $faker->phoneNumber, 										// ce_portable
+            $faker->phoneNumber, 										// ce_fax
+            $faker->email, 										// ce_email
+            'bureau', 										// ce_adresse_nom
+            $add, 										// ce_adresse1
+            '', 										// ce_adresse2
+            $postal, 										// ce_codepostal
+            $ville, 										// ce_ville
+            'France' 										// ce_pays
         ];
 
         $table_user = [
@@ -72,27 +72,28 @@ class TestController extends Controller
         ];
 
         $table_command = [
-            '',
-            '',
-            'FCH',
-            $faker->randomFloat(),
-            'EBILLET',
-            '',
-            '',
-            $faker->name,
-            $faker->address,
-            '',
-            $faker->postcode,
-            $faker->city,
-            "France",
-            config('app.url'),
-            config('app.url'),
-            '',
-            '',
-            '',
-            '',
-            '',
-            'CMD'.$faker->randomDigit(),
+            '0', 										// nb_cheques_vacances
+            '0', 										// montant_total_cheques_vacances
+            'FCH', 									// mode_paiement
+            '0', 										// prix_livraison
+            'EBILLET', 								// code_livraison
+            '', 										// commentaire
+            $faker->company, 										// livraison_adresse_societe
+            'bureau', 										// livraison_adresse_nom
+            $add, 										// livraison_adresse_1
+            '', 										// livraison_adresse_2
+            $postal, 										// livraison_codepostal
+            $ville, 										// livraison_ville
+            'France', 										// livraison_pays
+            '', 										// url_retour
+            '', 										// url_retour_ok
+            'https://test.com', 										// url_retour_err
+            '', 										// acompte
+            '', 										// numero_commande_ticketnet
+            '', 										// frais_gestion_payeur
+            '', 										// frais_port_payeur
+            '', 										// remise_frais_port
+            'FRF8569665' 										// numero_commande_distributeur
         ];
 
         $data = [
