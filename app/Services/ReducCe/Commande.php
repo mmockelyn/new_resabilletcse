@@ -14,7 +14,7 @@ class Commande extends Api
 
         $params = [
             'CE_ID' => config('ce.ce_id'),
-            'DS_DATA' => $dataset
+            'DS_DATA' => $tab
         ];
         $client = new Api('https://webservices-test.reducce.fr/Partenaire.svc?wsdl', ['cache_wsdl' => WSDL_CACHE_NONE]);
 
