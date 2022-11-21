@@ -98,7 +98,7 @@ class TestController extends Controller
 
         $data = [
             'SIGNATURE' => $signature,
-            "TABLE_CE" => $table_ce,
+            'TABLE_CE' => $table_ce,
             'TABLE_UTILISATEUR' => $table_user,
             'TABLE_COMMANDE' => $table_command,
         ];
